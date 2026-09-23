@@ -83,6 +83,7 @@ const runtimeConfigPath = path.join(
 const defaultDetoxScenarioNames = [
   "release-ota-recovery",
   "startup-hang-recovery",
+  "render-error-promotion",
   "multi-asset-replacement",
   "bspatch-archive-to-diff-ota",
   "bspatch-consecutive-diff-ota",
@@ -238,7 +239,7 @@ describe("Detox scenario contract", () => {
 
     expect(detoxScenarios).toEqual(defaultDetoxScenarioNames);
     expect(listDetoxScenarioNames()).toEqual(defaultDetoxScenarioNames);
-    expect(new Set(listDetoxScenarioNames()).size).toBe(15);
+    expect(new Set(listDetoxScenarioNames()).size).toBe(16);
   });
 
   it("uses Detox-owned scenario lookup in the runner", async () => {

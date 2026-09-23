@@ -34,6 +34,7 @@ const expectedScenarioModuleFiles = [
   "numeric-cohort-rollout.ts",
   "release-ota-recovery.ts",
   "startup-hang-recovery.ts",
+  "render-error-promotion.ts",
   "runtime-channel-switch-reset.ts",
   "target-cohorts-only.ts",
   "target-cohorts-rollout-interaction.ts",

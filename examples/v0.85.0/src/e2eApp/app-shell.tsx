@@ -8,6 +8,7 @@ import {
   useE2eDeepLinks,
 } from "./navigation-controller";
 import { NavigationFallback } from "./navigation-fallback";
+import { E2eRenderErrorBoundary } from "./render-error-boundary";
 import { e2eLinking } from "./route-paths";
 import { E2eStack } from "./routes";
 import { E2eRuntimeModelProvider } from "./runtime-model-context";
@@ -24,15 +25,17 @@ export const E2eHotUpdaterApp = ({
   useE2eDeepLinks();
 
   return (
-    <E2eRuntimeModelProvider model={model}>
-      <NavigationContainer
-        fallback={<NavigationFallback />}
-        linking={e2eLinking}
-        onReady={flushPendingE2eDeepLink}
-        ref={navigationRef}
-      >
-        <E2eStack />
-      </NavigationContainer>
-    </E2eRuntimeModelProvider>
+    <E2eRenderErrorBoundary>
+      <E2eRuntimeModelProvider model={model}>
+        <NavigationContainer
+          fallback={<NavigationFallback />}
+          linking={e2eLinking}
+          onReady={flushPendingE2eDeepLink}
+          ref={navigationRef}
+        >
+          <E2eStack />
+        </NavigationContainer>
+      </E2eRuntimeModelProvider>
+    </E2eRenderErrorBoundary>
   );
 };

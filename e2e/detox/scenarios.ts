@@ -8,6 +8,7 @@ import { forceUpdateAutoReloadScenario } from "./scenarios/force-update-auto-rel
 import { multiAssetReplacementScenario } from "./scenarios/multi-asset-replacement.ts";
 import { numericCohortRolloutScenario } from "./scenarios/numeric-cohort-rollout.ts";
 import { releaseOtaRecoveryScenario } from "./scenarios/release-ota-recovery.ts";
+import { renderErrorPromotionScenario } from "./scenarios/render-error-promotion.ts";
 import { runtimeChannelSwitchResetScenario } from "./scenarios/runtime-channel-switch-reset.ts";
 import { startupHangRecoveryScenario } from "./scenarios/startup-hang-recovery.ts";
 import { targetCohortsOnlyScenario } from "./scenarios/target-cohorts-only.ts";
@@ -23,6 +24,7 @@ export type {
 const detoxScenarios: readonly DetoxScenarioDefinition[] = [
   releaseOtaRecoveryScenario,
   startupHangRecoveryScenario,
+  renderErrorPromotionScenario,
   multiAssetReplacementScenario,
   bspatchArchiveToDiffOtaScenario,
   bspatchConsecutiveDiffOtaScenario,

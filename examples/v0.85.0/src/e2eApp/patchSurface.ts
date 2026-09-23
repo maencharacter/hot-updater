@@ -11,6 +11,11 @@ export function maybeCrashForE2E(): void {
   /* E2E_CRASH_GUARD_END */
 }
 
+export function maybeThrowDuringRenderForE2E(): void {
+  /* E2E_RENDER_ERROR_GUARD_START */
+  /* E2E_RENDER_ERROR_GUARD_END */
+}
+
 export function loadE2EDeployBundleAssets(): void {
   /* E2E_DEPLOY_ASSET_GUARD_START */
   /* E2E_DEPLOY_ASSET_GUARD_END */

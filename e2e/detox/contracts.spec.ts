@@ -122,6 +122,7 @@ describe("Detox E2E harness contract", () => {
       "e2e/detox/scenarios/numeric-cohort-rollout.ts",
       "e2e/detox/scenarios/release-ota-recovery.ts",
       "e2e/detox/scenarios/startup-hang-recovery.ts",
+      "e2e/detox/scenarios/render-error-promotion.ts",
       "e2e/detox/scenarios/runtime-channel-switch-reset.ts",
       "e2e/detox/scenarios/target-cohorts-only.ts",
       "e2e/detox/scenarios/target-cohorts-rollout-interaction.ts",

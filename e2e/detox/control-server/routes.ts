@@ -94,7 +94,7 @@ app.post("/e2e/jobs/deploy-bundle", async (c) => {
     forceUpdate?: boolean;
     marker?: string;
     message?: string;
-    mode?: "crash" | "hang" | "reset";
+    mode?: "crash" | "hang" | "render-error" | "reset";
     patchMaxBaseBundles?: number;
     rollout?: number;
     safeBundleIds?: string[];
@@ -111,9 +111,13 @@ app.post("/e2e/jobs/deploy-bundle", async (c) => {
   if (
     payload.mode !== "reset" &&
     payload.mode !== "crash" &&
-    payload.mode !== "hang"
+    payload.mode !== "hang" &&
+    payload.mode !== "render-error"
   ) {
-    return c.json({ error: "mode must be reset, crash, or hang" }, 400);
+    return c.json(
+      { error: "mode must be reset, crash, hang, or render-error" },
+      400,
+    );
   }
   if (
     payload.bundleProfile !== undefined &&
